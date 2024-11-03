@@ -1,0 +1,40 @@
+<odoo>
+    <!-- Vista de formulario para Tornillos -->
+    <record id="view_tornillo_form" model="ir.ui.view">
+        <field name="name">almacen.tornillo.form</field>
+        <field name="model">almacen.tornillo</field>
+        <field name="arch" type="xml">
+            <form string="Tornillo">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="diametro"/>
+                        <field name="rosca"/>
+                        <field name="cantidad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de lista para Tornillos -->
+    <record id="view_tornillo_tree" model="ir.ui.view">
+        <field name="name">almacen.tornillo.tree</field>
+        <field name="model">almacen.tornillo</field>
+        <field name="arch" type="xml">
+            <tree string="Tornillos">
+                <field name="nombre"/>
+                <field name="diametro"/>
+                <field name="rosca"/>
+                <field name="cantidad"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción para mostrar la lista de tornillos usando la vista de lista y formulario -->
+    <record id="action_tornillo" model="ir.actions.act_window">
+        <field name="name">Tornillos</field>
+        <field name="res_model">almacen.tornillo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
